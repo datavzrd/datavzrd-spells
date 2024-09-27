@@ -11,10 +11,10 @@ render-table:
   columns:
     p-value:
       spell:
-        url: "v0.0.1/stats/p-value"
+        url: "v1.0.0/stats/p-value"
         with:
           significance_threshold: 0.05
 ```
 
 In this example, the p-value column uses a spell that is fetched from the repository, allowing you to specify a significance threshold. 
-Spell can be used very flexible using any local file path, specific versioned URLs (e.g. `v0.0.1/stats/p-value`), or any remote URL like `https://github.com/datavzrd/datavzrd-spells/raw/main/stats/p-value/spell.yaml`.
+Spell can be used very flexible using any local file path, specific versioned URLs (e.g. `v1.0.0/stats/p-value`), or any remote URL like `https://github.com/datavzrd/datavzrd-spells/raw/main/stats/p-value/spell.yaml`.
