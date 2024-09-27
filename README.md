@@ -11,7 +11,7 @@ render-table:
   columns:
     p-value:
       spell:
-        url: "https://github.com/datavzrd/datavzrd-spells/raw/main/stats/p-value.yaml"
+        url: "https://github.com/datavzrd/datavzrd-spells/raw/main/stats/p-value/spell.yaml"
         with:
           significance_threshold: 0.05
 ```
