@@ -1,2 +1,3 @@
 # datavzrd-spells
-Provide reusable configuration snippets aka. spells for datavzrd
+
+This repository is designed to provide reusable configuration snippets, or "spells," for [datavzrd](https://github.com/datavzrd/datavzrd). These spells simplify the process of creating reports by allowing users to define common configurations in a modular way. Users can easily pull spells from local files or remote URLs, facilitating consistency and efficiency in data visualization workflows. The repository supports various statistical and visual functions, empowering data scientists, analysts, and developers to create insightful and aesthetically pleasing visualizations with minimal effort.
