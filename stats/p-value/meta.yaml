@@ -5,12 +5,12 @@ description: |
   The significance_threshold (e.g., p = 0.05) - a boundary between statistical significance and non-significance - can be adjusted dynamically based on the context or dataset.
 example: |
   render-table:
-  columns:
-    p-value:
-      spell:
-        url: v1.0.0/stats/p-value
-        with:
-          significance_threshold: 0.05
+    columns:
+      p-value:
+        spell:
+          url: v1.0.0/stats/p-value
+          with:
+            significance_threshold: 0.05
 authors:
   - Johannes Köster
   - Felix Wiegand

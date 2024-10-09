@@ -1,0 +1,15 @@
+name: boolean
+description: |
+  This spell visualizes boolean values via colored +/- symbols.
+example: |
+  render-table:
+    columns:
+      some_boolean_column:
+        spell:
+          url: v1.1.0/logic/boolean
+          with:
+            # specify which values should be interpreted as true or false
+            true_value: "true"
+            false_value: "false"
+authors:
+  - Johannes Köster
