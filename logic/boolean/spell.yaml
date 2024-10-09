@@ -4,9 +4,9 @@ custom: |
   ?f"""function(value) {{
     const trueLabel = '<span style="color: #1f77b4; font-weight: bold;">+</span>';
     const falseLabel = '<span style="color: #d62728; font-weight: bold;">-</span>';
-    if (value === {true_value}) {{
+    if (value === "{true_value}") {{
         return trueLabel;
-    }} else if (value === {false_value}) {{
+    }} else if (value === "{false_value}") {{
         return falseLabel;
     }} else {{
         return value;
