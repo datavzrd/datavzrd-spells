@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/datavzrd/datavzrd-spells/compare/v1.1.2...v1.1.3) (2024-11-04)
+
+
+### Miscellaneous Chores
+
+* release 1.1.3 ([2f57eda](https://github.com/datavzrd/datavzrd-spells/commit/2f57eda522ed8a3974c830c6b426747be5aa0c34))
+
 ## [1.1.2](https://github.com/datavzrd/datavzrd-spells/compare/v1.1.1...v1.1.2) (2024-11-04)
 
 
