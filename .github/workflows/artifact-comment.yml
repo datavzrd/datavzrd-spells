@@ -8,15 +8,14 @@ on:
 
 jobs:
   artifacts-url-comments:
-    name: add artifact links to pull request and related issues job
-    runs-on: windows-2019
+    runs-on: update-latest
+    permissions:
+      pull-requests: write
+    if: >
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion == 'success'
     steps:
-      - name: add artifact links to pull request and related issues step
-        uses: tonyhallett/artifacts-url-comments@v1.1.0
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Post comment
+        uses: live-codes/pr-comment-from-artifact@v1
         with:
-            prefix: |
-                Test case outputs:
-            format: name
-            addTo: pullandissues
+          GITHUB_TOKEN: ${{ github.token }}
