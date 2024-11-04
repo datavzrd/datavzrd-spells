@@ -1,15 +1,18 @@
 name: boolean
+type: "column"
 description: |
   This spell visualizes boolean values via colored +/- symbols.
-example: |
-  render-table:
-    columns:
-      some_boolean_column:
-        spell:
-          url: v1.1.0/logic/boolean
-          with:
-            # specify which values should be interpreted as true or false
-            true_value: "true"
-            false_value: "false"
+example:
+  code: |
+    render-table:
+      columns:
+        some boolean column:
+          spell:
+            url: <url>
+            with:
+              # specify which values should be interpreted as true or false
+              true_value: "true"
+              false_value: "false"
+  test-data: tests/data1.tsv
 authors:
   - Johannes Köster

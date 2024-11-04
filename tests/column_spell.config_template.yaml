@@ -1,0 +1,9 @@
+datasets:
+  test:
+    separator: "\t"
+    path: ?path
+
+views:
+  test:
+    dataset: test
+    render-table: ?example

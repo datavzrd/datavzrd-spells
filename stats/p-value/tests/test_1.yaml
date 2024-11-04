@@ -8,7 +8,7 @@ views:
     dataset: test
     render-table:
       columns:
-        pval:
+        some p-value column:
           spell:
             url: ../spell.yaml
             with:
