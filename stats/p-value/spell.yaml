@@ -1,13 +1,16 @@
 __use_yte__: true
 
+precision: 3
 plot:
   heatmap:
     scale: linear
     range:
       - "#a1d99b"
-      - "white"
+      - "#c0d9bd"
+      - "#fdebdc"
       - "#fdae6b"
     domain:
       - 0
       - ?significance_threshold
+      - ?float(significance_threshold) + 0.01
       - 0.25
