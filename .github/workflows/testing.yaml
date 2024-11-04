@@ -19,5 +19,7 @@ jobs:
           environment-file: environment.yaml
           cache-environment: false # we always want the latest stable datavzrd
           post-cleanup: 'all'
-      - run: |
+      - name: Run tests
+        shell: bash -el {0}
+        run: |
           pytest
