@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/datavzrd/datavzrd-spells/compare/v1.1.1...v1.1.2) (2024-11-04)
+
+
+### Bug Fixes
+
+* improve colors of stats/p-value ([#7](https://github.com/datavzrd/datavzrd-spells/issues/7)) ([11eefd5](https://github.com/datavzrd/datavzrd-spells/commit/11eefd590d11202547d6cc32ba88db6e371b8b35))
+
 ## [1.1.1](https://github.com/datavzrd/datavzrd-spells/compare/v1.1.0...v1.1.1) (2024-10-09)
 
 
