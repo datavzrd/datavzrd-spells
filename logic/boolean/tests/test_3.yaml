@@ -1,0 +1,15 @@
+datasets:
+  sizzle:
+    path: "data3.tsv"
+    separator: "\t"
+views:
+  sizzle:
+    dataset: sizzle
+    render-table:
+      columns:
+        sizzle:
+          spell:
+            url: "../spell.yaml"
+            with:
+              true_value: "hot"
+              false_value: "not"
