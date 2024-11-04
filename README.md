@@ -1,3 +1,5 @@
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/datavzrd/datavzrd-spells/testing.yml?branch=main&label=tests)](https://github.com/datavzrd/datavzrd-spells/actions)
+
 # datavzrd-spells
 
 This repository is designed to provide reusable configuration snippets, or _*spells*_, for [datavzrd](https://github.com/datavzrd/datavzrd). These spells simplify the process of creating reports by allowing users to define common configurations in a modular way. Users can easily pull spells from local files or remote URLs, facilitating consistency and efficiency in data visualization workflows. The repository supports various statistical and visual functions, empowering data scientists, analysts, and developers to create insightful and aesthetically pleasing visualizations with minimal effort.
