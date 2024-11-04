@@ -8,7 +8,7 @@ views:
     dataset: test
     render-table:
       columns:
-        bool:
+        some boolean column:
           spell:
             url: ../spell.yaml
             with:
