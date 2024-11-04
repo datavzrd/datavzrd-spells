@@ -6,19 +6,13 @@
 
 This repository is designed to provide reusable configuration snippets, or _*spells*_, for [datavzrd](https://github.com/datavzrd/datavzrd). These spells simplify the process of creating reports by allowing users to define common configurations in a modular way. Users can easily pull spells from local files or remote URLs, facilitating consistency and efficiency in data visualization workflows. The repository supports various statistical and visual functions, empowering data scientists, analysts, and developers to create insightful and aesthetically pleasing visualizations with minimal effort.
 
-### Usage
+A catalog of all available spells can be found at https://datavzrd.github.io/docs/spells.html.
 
-This basic example uses a spell for a p-value visualization:
+# Contributing a new spell
 
-```yaml
-render-table:
-  columns:
-    p-value:
-      spell:
-        url: "v1.0.0/stats/p-value"
-        with:
-          significance_threshold: 0.05
-```
+New spells can be contributed by
 
-In this example, the p-value column uses a spell that is fetched from the repository, allowing you to specify a significance threshold. 
-Spell can be used very flexible using any local file path, specific versioned URLs (e.g. `v1.0.0/stats/p-value`), or any remote URL like `https://github.com/datavzrd/datavzrd-spells/raw/main/stats/p-value/spell.yaml`.
+1. Forking and cloning this repository.
+2. Adding a spell subfolder (e.g. `stats/spellname`). Try to use speaking names that already explain what the spell visualizes.
+3. Create a `meta.yaml`, a `spell.yaml` and a `tests` subfolder with appropriate content. Use the already available spells for inspiration.
+4. Open a pull request. In the pull request, make sure to see whether the tests pass or complain, and check out the generated artifacts for the testcase output of your spell. Once the pull request is merged, your spell will automatically occur in the catalog at https://datavzrd.github.io/docs/spells.html.
