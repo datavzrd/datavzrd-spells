@@ -1,4 +1,4 @@
-name: add artifact links to pull request and related issues
+name: artifact comments
 on:
   workflow_run:
     workflows:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   artifacts-url-comments:
-    runs-on: update-latest
+    runs-on: ubuntu-latest
     permissions:
       pull-requests: write
     if: >
