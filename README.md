@@ -1,4 +1,6 @@
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/datavzrd/datavzrd-spells/testing.yml?branch=main&label=tests)](https://github.com/datavzrd/datavzrd-spells/actions)
+![GitHub Release](https://img.shields.io/github/v/release/datavzrd/datavzrd-spells)
+
 
 # datavzrd-spells
 
