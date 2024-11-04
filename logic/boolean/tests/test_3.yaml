@@ -1,6 +1,6 @@
 datasets:
   sizzle:
-    path: "data.tsv"
+    path: "data3.tsv"
     separator: "\t"
 views:
   sizzle:
