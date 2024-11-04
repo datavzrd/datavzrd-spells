@@ -17,7 +17,7 @@ jobs:
         with:
           micromamba-version: '2.0.2-2' # any version from https://github.com/mamba-org/micromamba-releases
           environment-file: environment.yaml
-          cache-environment: true
+          cache-environment: false # we always want the latest stable datavzrd
           post-cleanup: 'all'
       - run: |
           pytest
