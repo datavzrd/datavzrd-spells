@@ -1,0 +1,16 @@
+datasets:
+  test:
+    path: data2.tsv
+    separator: "\t"
+
+views:
+  test:
+    dataset: test
+    render-table:
+      columns:
+        bool:
+          spell:
+            url: ../spell.yaml
+            with:
+              true_value: 1
+              false_value: 0

@@ -1,0 +1,15 @@
+datasets:
+  test:
+    path: data.tsv
+    separator: "\t"
+
+views:
+  test:
+    dataset: test
+    render-table:
+      columns:
+        pval:
+          spell:
+            url: ../spell.yaml
+            with:
+              significance_threshold: 0.05
