@@ -1,0 +1,15 @@
+name: Test
+
+datasets:
+    test:
+      path: tests/data/data1.tsv
+      separator: "\t"
+
+views:
+  test:
+    dataset: test
+    render-table:
+      columns: 
+        Significance Column:
+          spell:
+            url: tests/spells/spell.yaml
