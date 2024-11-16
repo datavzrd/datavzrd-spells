@@ -1,7 +1,8 @@
 name: clin_sig
-type: "column"
+type: "column consistent of strings, separated by ',' "
 description: |
-  This spell visualizes the clinical significance via bootstrap pills
+  This spell visualizes the clinical significance, given in clinvar significance terms
+link-to-url: https://www.ncbi.nlm.nih.gov/clinvar/
 example: 
   code: |
     render-table:

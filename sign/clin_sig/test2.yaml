@@ -2,7 +2,7 @@ name: Test2
 
 datasets:
     test:
-      path: tests/data/data2.tsv
+      path: sign/clin_sig/data2.tsv
       separator: "\t"
 
 views:
@@ -12,4 +12,4 @@ views:
       columns: 
         Significance Column:
           spell:
-            url: tests/spells/spell.yaml
+            url: sign/clin_sig/spell.yaml

@@ -1,8 +1,8 @@
-name: Test
+name: Test3
 
 datasets:
     test:
-      path: sign/clin_sig/data1.tsv
+      path: sign/clin_sig/data3.tsv
       separator: "\t"
 
 views:
