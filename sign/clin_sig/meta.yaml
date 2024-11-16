@@ -12,4 +12,4 @@ example:
             url: <url>
 testdata: data1.tsv
 authors:
-  -Benjamin Orlik
+  - Benjamin Orlik
