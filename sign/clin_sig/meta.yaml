@@ -1,13 +1,12 @@
 name: clin_sig
-type: "column consistent of strings, separated by ',' "
+type: "column consisting of strings, separated by ',' "
 description: |
-  This spell visualizes the clinical significance, given in clinvar significance terms
-link-to-url: https://www.ncbi.nlm.nih.gov/clinvar/
+  This spell visualizes the clinical significance, given in clinvar significance terms (https://www.ncbi.nlm.nih.gov/clinvar/)
 example: 
   code: |
     render-table:
       columns: 
-        Significance Column:
+        clinical significance:
           spell:
             url: <url>
 testdata: data1.tsv
