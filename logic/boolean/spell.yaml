@@ -2,8 +2,8 @@ __use_yte__: true
 
 custom: |
   ?f"""function(value) {{
-    const trueLabel = '<span style="color: #1f77b4; font-weight: bold;">&#9989;</span>';
-    const falseLabel = '<span style="color: #d62728; font-weight: bold;">&#10060;</span>';
+    const trueLabel = '<span>&#9989;</span>';
+    const falseLabel = '<span>&#10060;</span>';
     if (value === "{true_value}") {{
         return trueLabel;
     }} else if (value === "{false_value}") {{
