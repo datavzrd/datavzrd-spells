@@ -1,7 +1,7 @@
 __use_yte__: true
 
 custom: |
-  function clin_sig(value){
+  function(value){
     const colorMapping = {
       "unknown": "rgb(108 117 125)", // gray 
       "not_provided": "rgb(52 58 64)", // dark gray 

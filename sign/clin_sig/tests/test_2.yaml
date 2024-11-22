@@ -1,8 +1,8 @@
-name: Test
+name: Test2
 
 datasets:
     test:
-      path: sign/clin_sig/data1.tsv
+      path: sign/clin_sig/tests/data2.tsv
       separator: "\t"
 
 views:
@@ -10,6 +10,6 @@ views:
     dataset: test
     render-table:
       columns: 
-        Significance Column:
+        some clinical significance column:
           spell:
             url: sign/clin_sig/spell.yaml
