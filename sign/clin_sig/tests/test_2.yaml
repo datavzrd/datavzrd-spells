@@ -2,7 +2,7 @@ name: Test2
 
 datasets:
     test:
-      path: sign/clin_sig/tests/data2.tsv
+      path: data2.tsv
       separator: "\t"
 
 views:
