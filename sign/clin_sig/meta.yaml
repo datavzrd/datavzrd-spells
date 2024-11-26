@@ -10,6 +10,6 @@ example:
         some clinical significance column:
           spell:
             url: <url>
-  test-data: sign/clin_sig/tests/data1.tsv
+  test-data: tests/data1.tsv
 authors:
   - Benjamin Orlik
