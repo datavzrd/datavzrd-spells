@@ -12,4 +12,4 @@ views:
       columns: 
         some clinical significance column:
           spell:
-            url: sign/clin_sig/spell.yaml
+            url: ../spell.yaml
