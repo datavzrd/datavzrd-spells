@@ -21,6 +21,6 @@ custom: |
       "pathogenic": "rgb(189 33 48)" // dark red 
     };
 
-    const splitValues = value.split(",").map(item => `<span style="display: inline-block; padding: 0.25em 0.5em; font-size: 0.875em; font-weight: bold; color: white; background-color: ${colorMapping[item.trim()]}; border-radius: 0.25em; margin-right: 0; ">${item.trim()}</span>`);
+    const splitValues = value.split(",").map(item => `<span style="display: inline-block; padding: 0.25em 0.5em; font-size: 0.875em; font-weight: bold; color: white; background-color: ${colorMapping[item.trim()]}; border-radius: 0.25em;">${item.trim()}</span>`);
     return splitValues.join(' '); 
   }
