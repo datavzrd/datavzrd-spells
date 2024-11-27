@@ -1,0 +1,15 @@
+name: Test2
+
+datasets:
+    test:
+      path: data2.tsv
+      separator: "\t"
+
+views:
+  test:
+    dataset: test
+    render-table:
+      columns: 
+        some clinical significance column:
+          spell:
+            url: ../spell.yaml

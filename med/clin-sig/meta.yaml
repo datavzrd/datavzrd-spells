@@ -1,0 +1,15 @@
+name: clin_sig
+type: "column"
+description: |
+  This spell visualizes the clinical significance, given in clinvar significance terms (https://www.ncbi.nlm.nih.gov/clinvar/)
+  The values should be given in a column consisting of strings and separated by ','
+example: 
+  code: |
+    render-table:
+      columns: 
+        some clinical significance column:
+          spell:
+            url: <url>
+  test-data: tests/data1.tsv
+authors:
+  - Benjamin Orlik
