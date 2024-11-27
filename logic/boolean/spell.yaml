@@ -2,8 +2,8 @@ __use_yte__: true
 
 custom: |
   ?f"""function(value) {{
-    const trueLabel = '<span style="color: #1f77b4; font-weight: bold;">+</span>';
-    const falseLabel = '<span style="color: #d62728; font-weight: bold;">-</span>';
+    const trueLabel = '<span style=" display: inline-block; padding: 0.5em 1em; font-size: 0.875em; font-weight: bold; color: white; background-color: rgb(0,128,255); border-radius: 0.25em; text-align: center;">+</span>';
+    const falseLabel = '<span style=" display: inline-block; padding: 0.5em 1em; font-size: 0.875em; font-weight: bold; color: white; background-color: rgb(255,0,0); border-radius: 0.25em; text-align: center;">-</span>';
     if (value === "{true_value}") {{
         return trueLabel;
     }} else if (value === "{false_value}") {{
@@ -13,3 +13,5 @@ custom: |
     }}
   }}
   """
+
+  
