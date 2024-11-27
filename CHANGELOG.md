@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.1.3...v1.2.0) (2024-11-27)
+
+
+### Features
+
+* Badges instead of "+" and "-" for boolean spell ([#15](https://github.com/datavzrd/datavzrd-spells/issues/15)) ([fcd81b8](https://github.com/datavzrd/datavzrd-spells/commit/fcd81b8f5138dda13fd32934bef023ed44b7b5e7))
+* clin_sig spell ([#13](https://github.com/datavzrd/datavzrd-spells/issues/13)) ([00e26c0](https://github.com/datavzrd/datavzrd-spells/commit/00e26c070c7d48062ea5271076d3ef2ff4f43b2b))
+
 ## [1.1.3](https://github.com/datavzrd/datavzrd-spells/compare/v1.1.2...v1.1.3) (2024-11-04)
 
 
