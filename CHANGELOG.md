@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/datavzrd/datavzrd-spells/compare/v1.2.0...v1.2.1) (2024-11-27)
+
+
+### Bug Fixes
+
+* clin-sig - reduce whitespace between badges ([#17](https://github.com/datavzrd/datavzrd-spells/issues/17)) ([c9e02a8](https://github.com/datavzrd/datavzrd-spells/commit/c9e02a890a1ecd720f83b6a444260587547e4ae5))
+
 ## [1.2.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.1.3...v1.2.0) (2024-11-27)
 
 
