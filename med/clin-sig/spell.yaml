@@ -20,12 +20,12 @@ plot:
       - pathogenic/likely_pathogenic
       - pathogenic
     range:
-      - "#6C757D"
-      - "#343A40"
+      - "#E4E6E7"
+      - "#73808C"
       - "#ADB5BD"
-      - "#218838"
-      - "#218838"
-      - "#28A745"
+      - "#28A443"
+      - "#28A443"
+      - "#46D267"
       - "#20C997"
       - "#FFC107"
       - "#17A2B8"
