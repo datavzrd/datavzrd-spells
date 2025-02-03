@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/datavzrd/datavzrd-spells/compare/v1.2.1...v1.2.2) (2025-02-03)
+
+
+### Bug Fixes
+
+* Improve boolean spell colors and margins ([#20](https://github.com/datavzrd/datavzrd-spells/issues/20)) ([07a034f](https://github.com/datavzrd/datavzrd-spells/commit/07a034f5d492541f1406dbce95d17378b937989a))
+
 ## [1.2.1](https://github.com/datavzrd/datavzrd-spells/compare/v1.2.0...v1.2.1) (2024-11-27)
 
 
