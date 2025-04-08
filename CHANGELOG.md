@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.2.2...v1.3.0) (2025-04-08)
+
+
+### Features
+
+* Introduce genomic coordinates visualization spell with enhanced formatting ([#22](https://github.com/datavzrd/datavzrd-spells/issues/22)) ([386e4a6](https://github.com/datavzrd/datavzrd-spells/commit/386e4a66ff0f1e19482ddc9d22521e87ac35d567))
+
 ## [1.2.2](https://github.com/datavzrd/datavzrd-spells/compare/v1.2.1...v1.2.2) (2025-02-03)
 
 
