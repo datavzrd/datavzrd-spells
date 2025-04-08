@@ -1,0 +1,15 @@
+name: Test
+
+datasets:
+    test:
+      path: data1.tsv
+      separator: "\t"
+
+views:
+  test:
+    dataset: test
+    render-table:
+      columns:
+        some clinical column containing genomic coordinates:
+          spell:
+            url: ../spell.yaml
