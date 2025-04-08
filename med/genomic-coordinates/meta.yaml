@@ -1,0 +1,16 @@
+name: genomic-coordinates
+type: "column"
+description: |
+  This spell visualizes genomic coordinates in a structured and visually enhanced way.
+  It formats the coordinates with color-coded pills for reference and alternate bases, making it easy to read and interpret genomic variant data.
+  The values should be given in a column with the format "<chromosome>:<reference><coordinates><alternate>" (e.g., "6:G29942560A").
+example:
+  code: |
+    render-table:
+      columns: 
+        some clinical column containing genomic coordinates:
+          spell:
+            url: <url>
+  test-data: tests/data1.tsv
+authors:
+  - Felix Wiegand
