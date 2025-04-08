@@ -10,6 +10,6 @@ views:
     dataset: test
     render-table:
       columns:
-        some column with genomic coordinates:
+        some clinical column containing genomic coordinates:
           spell:
             url: ../spell.yaml
