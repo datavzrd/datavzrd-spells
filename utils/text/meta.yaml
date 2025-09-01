@@ -6,7 +6,7 @@ example:
   code: |
     render-table:
       columns:
-        some column:
+        text:
           spell:
             url: <url>
             with:
