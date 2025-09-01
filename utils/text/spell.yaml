@@ -2,7 +2,7 @@ __use_yte__: true
 
 custom: |
   ?f"""function(value) {{
-    const max = {chars-per-line};
+    const max = {chars_per_line};
     let out = '';
     for (let i = 0; i < value.length;) {{
       let j = value.indexOf(' ', i + max);

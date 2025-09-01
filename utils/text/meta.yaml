@@ -11,7 +11,7 @@ example:
             url: <url>
             with:
               # specify how many characters should be used per line
-              chars-per-line: 50
+              chars_per_line: 50
   test-data: tests/data1.tsv
 authors:
   - Felix Wiegand

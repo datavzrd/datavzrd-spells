@@ -12,4 +12,4 @@ views:
           spell:
             url: ../spell.yaml
             with:
-              chars-per-line: 25
+              chars_per_line: 25
