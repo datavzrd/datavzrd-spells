@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.4.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.3.0...v1.4.0) (2025-09-01)
+
+
+### Features
+
+* Add text column spell for splitting long text at whitespace ([f700163](https://github.com/datavzrd/datavzrd-spells/commit/f70016326cd8ec18a8a7e912d90a11a5fa8af80a))
+
+
+### Bug Fixes
+
+* Fix template syntax in spell.yaml output div ([bd9ca10](https://github.com/datavzrd/datavzrd-spells/commit/bd9ca10e0852ece8fd8cae662f8477955dd54829))
+* Rename table column from 'some column' to 'text' ([84797ea](https://github.com/datavzrd/datavzrd-spells/commit/84797eaee9ed31cdd7c88d7b13e64ac712a073e8))
+* Use snake_case for chars_per_line in config files ([5ad0398](https://github.com/datavzrd/datavzrd-spells/commit/5ad0398aba0241b87004277648a674d6256b3335))
+
 ## [1.3.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.2.2...v1.3.0) (2025-04-08)
 
 
