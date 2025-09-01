@@ -1,0 +1,17 @@
+name: text
+type: "column"
+description: |
+  This spell allows to split long text after a certain number of characters (always at whitespace).
+example:
+  code: |
+    render-table:
+      columns:
+        some column:
+          spell:
+            url: <url>
+            with:
+              # specify how many characters should be used per line
+              chars-per-line: 50
+  test-data: tests/data1.tsv
+authors:
+  - Felix Wiegand

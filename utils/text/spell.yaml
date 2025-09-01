@@ -1,0 +1,15 @@
+__use_yte__: true
+
+custom: |
+  ?f"""function(value) {{
+    const max = {chars-per-line};
+    let out = '';
+    for (let i = 0; i < value.length;) {{
+      let j = value.indexOf(' ', i + max);
+      if (j === -1) {{ out += value.slice(i); break; }}
+      out += value.slice(i, j) + '<br>';
+      i = j + 1;
+    }}
+    return `<div style="line-height:1.1 !important">${out}</div>`;
+  }}
+  """

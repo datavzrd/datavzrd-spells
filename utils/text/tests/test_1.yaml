@@ -1,0 +1,15 @@
+datasets:
+  test:
+    path: data1.tsv
+    separator: "\t"
+
+views:
+  test:
+    dataset: test
+    render-table:
+      columns:
+        text:
+          spell:
+            url: ../spell.yaml
+            with:
+              chars-per-line: 25
