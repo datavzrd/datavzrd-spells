@@ -1,33 +1,33 @@
 __use_yte__: true
 
 custom: |
-    function(value) {
-        const match = value.match(/^(\d+):([A-Z]+)(\d+)([A-Z]+)$/i);
-        if (!match) return `<span>${value}</span>`;
-      
-        const [, chr, ref, pos, alt] = match;
-      
-        const baseColor = {
-          A: "#fdd",
-          T: "#dfd",
-          C: "#ddf",
-          G: "#ffd"
-        };
-      
-        function pill(text, bg) {
-            return `<span style="background:${bg};padding:4px 4px;border-radius:4px;margin-right:1px;display:inline-block;">${text}</span>`;
-        }
-      
-        function basePills(seq) {
-            return seq.split("").map(base => pill(base, baseColor[base.toUpperCase()] || "#ccc")).join("");
-        }
-      
-        return `
-            <span>
-                ${pill("chr" + chr, "#eee")}
-                ${basePills(ref)}
-                ${pill(pos, "#eee")}
-                ${basePills(alt)}
-            </span>
-        `;
-    }
+  function(value) {
+      const match = value.match(/^(?:chr)?([0-9XY]+):([A-Z])(\d+)([A-Z])$/i);
+      if (!match) return `<span>${value}</span>`;
+
+      const [, chr, ref, pos, alt] = match;
+
+      const baseColor = {
+        A: "#fdd",
+        T: "#dfd",
+        C: "#ddf",
+        G: "#ffd"
+      };
+
+      function pill(text, bg) {
+          return `<span style="background:${bg};padding:4px 4px;border-radius:4px;margin-right:1px;display:inline-block;">${text}</span>`;
+      }
+
+      function basePills(seq) {
+          return seq.split("").map(base => pill(base, baseColor[base.toUpperCase()] || "#ccc")).join("");
+      }
+
+      return `
+          <span>
+              ${pill("chr" + chr, "#eee")}
+              ${basePills(ref)}
+              ${pill(pos, "#eee")}
+              ${basePills(alt)}
+          </span>
+      `;
+  }
