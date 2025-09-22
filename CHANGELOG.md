@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/datavzrd/datavzrd-spells/compare/v1.4.0...v1.4.1) (2025-09-22)
+
+
+### Bug Fixes
+
+* Update genomic coordinate regex to handle chr prefix and X and Y chroms ([#26](https://github.com/datavzrd/datavzrd-spells/issues/26)) ([71af2d4](https://github.com/datavzrd/datavzrd-spells/commit/71af2d479abe3960dd701834d16fb06fd1486dd6))
+
 ## [1.4.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.3.0...v1.4.0) (2025-09-01)
 
 
