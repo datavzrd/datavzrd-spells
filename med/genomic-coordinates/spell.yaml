@@ -2,7 +2,7 @@ __use_yte__: true
 
 custom: |
   function(value) {
-      const match = value.match(/^(?:chr)?([0-9XY]+):([A-Z])(\d+)([A-Z])$/i);
+      const match = value.match(/^(?:chr)?([0-9XY]+):([A-Z]+)(\d+)([A-Z]+)$/i);
       if (!match) return `<span>${value}</span>`;
 
       const [, chr, ref, pos, alt] = match;
