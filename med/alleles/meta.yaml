@@ -1,0 +1,15 @@
+name: alleles
+type: "column"
+description: |
+  This spell visualizes alleles using merged pills with color-coded bases.
+  Coloring is based on the same color scheme used by alignoth.
+example:
+  code: |
+    render-table:
+      columns:
+        some clinical column containing alleles:
+          spell:
+            url: <url>
+  test-data: tests/data1.tsv
+authors:
+  - Felix Wiegand
