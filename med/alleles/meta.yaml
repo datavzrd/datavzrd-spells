@@ -1,7 +1,7 @@
 name: alleles
 type: "column"
 description: |
-  This spell visualizes alleles using merged pills with color-coded bases.
+  This spell visualizes alleles (e.g. A, T, G, C or any longer string composed out of these nucleotides) using merged pills with color-coded bases.
   Coloring is based on the same color scheme used by alignoth.
 example:
   code: |
