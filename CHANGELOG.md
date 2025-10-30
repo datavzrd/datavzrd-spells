@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.4.1...v1.5.0) (2025-10-30)
+
+
+### Features
+
+* Add alleles spell ([#28](https://github.com/datavzrd/datavzrd-spells/issues/28)) ([87ac64c](https://github.com/datavzrd/datavzrd-spells/commit/87ac64c56e9610b11cf108eec491071f79c89d75))
+
 ## [1.4.1](https://github.com/datavzrd/datavzrd-spells/compare/v1.4.0...v1.4.1) (2025-09-22)
 
 
