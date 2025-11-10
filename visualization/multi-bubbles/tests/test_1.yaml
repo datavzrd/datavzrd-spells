@@ -2,8 +2,7 @@ name: Test
 
 datasets:
     test:
-      path: data1.tsv
-      separator: "\t"
+      path: data1.csv
 
 views:
   test:
