@@ -19,6 +19,6 @@ example:
               size_domain_max: 100
               size_scale: linear
               scheme: viridis
-  test-data: tests/data1.tsv
+  test-data: tests/data1.csv
 authors:
   - Felix Wiegand
