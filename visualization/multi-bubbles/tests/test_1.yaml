@@ -3,6 +3,7 @@ name: Test
 datasets:
     test:
       path: data1.csv
+      separator: ","
 
 views:
   test:
