@@ -15,3 +15,11 @@ views:
             url: ../spell.yaml
             with:
               color: "column used for color"
+              color_domain_min: 20
+              color_domain_max: 100
+              color_scale: "linear"
+              size: "column used for size"
+              size_domain_min: 0
+              size_domain_max: 100
+              size_scale: "linear"
+              scheme: "viridis"

@@ -2,23 +2,25 @@ __use_yte__: true
 
 custom-plot:
     data: |
-      ?f"""function(value, row) {{ return [{{"size": row.value, "color": row["{color}"]}}] }}"""
+      ?f"""function(value, row) {{ return [{{"size": row["{size}"], "color": row["{color}"]}}] }}"""
     vega-controls: true
     spec: |
         ?f"""{{
           "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
           "width": 50,
           "height": 10,
+          "mark": "circle",
           "encoding": {{
               "tooltip": [
-                  {{"field": "size"}},
+                  {{"field": "size", "title": "{size}"}},
                   {{"field": "color", "title": "{color}"}}
               ],
               "color": {{
                   "field": "color",
                   "scale": {{
                       "type": "{color_scale}",
-                      "domain": [{color_domain_min}, {color_domain_max}]
+                      "domain": [{color_domain_min}, {color_domain_max}],
+                      "scheme": "{scheme}"
                   }},
                   "legend": null
               }},

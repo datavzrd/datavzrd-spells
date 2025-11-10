@@ -13,10 +13,12 @@ example:
               color: "column used for color"
               color_domain_min: 0
               color_domain_max: 100
-              color_scale: "linear"
+              color_scale: linear
+              size: "column used for size"
               size_domain_min: 0
               size_domain_max: 100
-              size_scale: "linear"
+              size_scale: linear
+              scheme: viridis
   test-data: tests/data1.tsv
 authors:
   - Felix Wiegand
