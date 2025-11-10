@@ -10,10 +10,10 @@ custom-plot:
           "width": 50,
           "height": 10,
           "encoding": {{
-              "tooltip": {{
+              "tooltip": [
                   {{"field": "size"}},
                   {{"field": "color", "title": "{color}"}}
-              }},
+              ],
               "color": {{
                   "field": "color",
                   "scale": {{
