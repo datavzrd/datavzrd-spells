@@ -1,0 +1,17 @@
+name: Test
+
+datasets:
+    test:
+      path: data1.tsv
+      separator: "\t"
+
+views:
+  test:
+    dataset: test
+    render-table:
+      columns:
+        column used for size:
+          spell:
+            url: ../spell.yaml
+            with:
+              color: "column used for color"
