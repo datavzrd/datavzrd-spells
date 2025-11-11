@@ -22,4 +22,4 @@ views:
               size_domain_min: 0
               size_domain_max: 100
               size_scale: "linear"
-              scheme: "viridis"
+              color_scheme: "viridis"

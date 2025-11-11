@@ -18,7 +18,7 @@ example:
               size_domain_min: 0
               size_domain_max: 100
               size_scale: linear
-              scheme: viridis
+              color_scheme: viridis
   test-data: tests/data1.csv
 authors:
   - Felix Wiegand

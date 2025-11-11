@@ -20,7 +20,7 @@ custom-plot:
                   "scale": {{
                       "type": "{color_scale}",
                       "domain": [{color_domain_min}, {color_domain_max}],
-                      "scheme": "{scheme}"
+                      "scheme": "{color_scheme}"
                   }},
                   "legend": null
               }},
