@@ -1,6 +1,5 @@
 datasets:
   test:
-    separator: "\t"
     path: ?path
 
 views:
