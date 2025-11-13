@@ -1,0 +1,49 @@
+__use_yte__: true
+
+custom-plot:
+    data: |
+      ?f"""function(value, row) {{ return [{{"size": row["{size}"], "color": row["{color}"]}}] }}"""
+    vega-controls: true
+    spec: |
+        ?f"""{{
+          "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+          "width": 50,
+          "height": 10,
+          "mark": "circle",
+          "encoding": {{
+              "tooltip": [
+                  {{"field": "size", "title": "{size}"}},
+                  {{"field": "color", "title": "{color}"}}
+              ],
+              "color": {{
+                  "field": "color",
+                  "scale": {{
+                      "type": "{color_scale}",
+                      "domain": [{color_domain_min}, {color_domain_max}],
+                      "scheme": "{color_scheme}"
+                  }},
+                  "legend": null
+              }},
+              "size": {{
+                  "field": "size",
+                  "scale": {{
+                      "type": "{size_scale}",
+                      "domain": [{size_domain_min}, {size_domain_max}]
+                  }},
+                  "axis": {{
+                      "title": null,
+                      "ticks": false,
+                      "labels": false,
+                      "grid": false,
+                      "offset": -11
+                  }},
+                  "legend": null
+              }},
+              "y": {{"value": 0, "scale": {{"domain": [0, 1]}}}}
+          }},
+          "config": {{
+              "background": null,
+              "style": {{"cell": {{"stroke": "transparent"}}}}
+          }}
+        }}
+        """

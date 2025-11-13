@@ -1,0 +1,25 @@
+name: Test
+
+datasets:
+    test:
+      path: data1.csv
+      separator: ","
+
+views:
+  test:
+    dataset: test
+    render-table:
+      columns:
+        column used for size:
+          spell:
+            url: ../spell.yaml
+            with:
+              color: "column used for color"
+              color_domain_min: 20
+              color_domain_max: 100
+              color_scale: "linear"
+              size: "column used for size"
+              size_domain_min: 0
+              size_domain_max: 100
+              size_scale: "linear"
+              color_scheme: "viridis"
