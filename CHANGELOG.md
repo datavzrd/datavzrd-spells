@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/datavzrd/datavzrd-spells/compare/v1.5.0...v1.5.1) (2025-11-13)
+
+
+### Bug Fixes
+
+* Update color scheme for alleles spell to reflect updated alignoth color scheme ([#31](https://github.com/datavzrd/datavzrd-spells/issues/31)) ([ef73677](https://github.com/datavzrd/datavzrd-spells/commit/ef7367720f12a6906dba5965bd9bcaf564a33b5f))
+
 ## [1.5.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.4.1...v1.5.0) (2025-10-30)
 
 
