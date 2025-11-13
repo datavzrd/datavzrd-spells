@@ -4,5 +4,5 @@ plot:
   pills:
     separator: ""
     domain: ["A", "T", "G", "C"]
-    range: ["#CADB69", "#7284A8", "#F28CC2", "#F2B671"]
+    range: ["#F0E442", "#56B4E9", "#CC79A7", "#E69F00"]
     merge: true
