@@ -22,8 +22,7 @@ custom-plot:
                       "domain": [{effect_size_domain_min}, {effect_size_domain_max}],
                       "domainMid": "{effect_size_domain_mid}",
                       "scheme": "{effect_size_color_scheme}"
-                  }},
-                  "legend": null
+                  }}
               }},
               "size": {{
                   "field": "size",
@@ -38,8 +37,7 @@ custom-plot:
                       "labels": false,
                       "grid": false,
                       "offset": -11
-                  }},
-                  "legend": null
+                  }}
               }},
               "y": {{"value": 0, "scale": {{"domain": [0, 1]}}}}
           }},
