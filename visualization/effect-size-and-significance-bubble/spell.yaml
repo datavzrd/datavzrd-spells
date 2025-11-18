@@ -2,7 +2,7 @@ __use_yte__: true
 
 custom-plot:
     data: |
-      ?f"""function(value, row) {{ return [{{"size": row["{size}"], "color": row["{color}"]}}] }}"""
+      ?f"""function(value, row) {{ return [{{"size": row["{effect_significance}"], "color": row["{effect_size}"]}}] }}"""
     vega-controls: true
     spec: |
         ?f"""{{
