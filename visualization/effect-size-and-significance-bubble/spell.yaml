@@ -18,7 +18,7 @@ custom-plot:
               "color": {{
                   "field": "color",
                   "scale": {{
-                      "type": "{effect_size_color_scale}",
+                      "type": "linear",
                       "domain": [{effect_size_domain_min}, {effect_size_domain_max}],
                       "domainMid": "{effect_size_domain_mid}",
                       "scheme": "{effect_size_color_scheme}"
