@@ -12,23 +12,25 @@ custom-plot:
           "mark": "circle",
           "encoding": {{
               "tooltip": [
-                  {{"field": "size", "title": "{size}"}},
-                  {{"field": "color", "title": "{color}"}}
+                  {{"field": "size", "title": "{effect_significance}"}},
+                  {{"field": "color", "title": "{effect_size}"}}
               ],
               "color": {{
                   "field": "color",
                   "scale": {{
-                      "type": "{color_scale}",
-                      "domain": [{color_domain_min}, {color_domain_max}],
-                      "scheme": "{color_scheme}"
+                      "type": "{effect_size_color_scale}",
+                      "domain": [{effect_size_domain_min}, {effect_size_domain_max}],
+                      "domainMid": "{effect_size_domain_mid}",
+                      "scheme": "{effect_size_color_scheme}"
                   }},
                   "legend": null
               }},
               "size": {{
                   "field": "size",
                   "scale": {{
-                      "type": "{size_scale}",
-                      "domain": [{size_domain_min}, {size_domain_max}]
+                      "type": "threshold",
+                      "domain": [1, 0.1, 0.05, 0.01],
+                      "range": [10, 50, 100, 200, 300]
                   }},
                   "axis": {{
                       "title": null,
