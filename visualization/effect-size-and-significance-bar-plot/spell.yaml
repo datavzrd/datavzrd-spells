@@ -20,7 +20,7 @@ custom-plot:
             "tooltip": [
                 {{"field": "size", "title": "{effect_size}"}},
                 {{"field": "significance", "title": "{effect_significance}"}},
-                {{"field": "signed_pi, "title": "signed pi value"}}
+                {{"field": "signed_pi", "title": "signed pi value"}}
             ],
             "color": {{
               "field": "signed_pi",
