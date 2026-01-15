@@ -12,7 +12,7 @@ example:
   code: |
     render-table:
       columns:
-        effect size and significance:
+        effect size:
           spell:
             url: <url>
             with:

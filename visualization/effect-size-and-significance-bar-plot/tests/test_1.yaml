@@ -10,7 +10,7 @@ views:
     dataset: test
     render-table:
       columns:
-        effect size and significance:
+        effect size:
           spell:
             url: ../spell.yaml
             with:
