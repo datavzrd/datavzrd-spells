@@ -17,35 +17,35 @@ custom-plot:
           ],
           "mark": "rule",
           "encoding": {{
-              "tooltip": [
-                  {{"field": "size", "title": "{effect_size}"}},
-                  {{"field": "significance", "title": "{effect_significance}"}},
-                  {{"field": "signed_pi, "title": "signed pi value"}}
-              ],
-              "color": {{
-                "field": "signed_pi",
-                "scale": {{
-                  "type": "linear",
-                  "scheme": "blueorange",
-                  "domainMid": 0
-                }}
-              }},
-              "x": {{
-                "value": 0
-              }},
-              "x2": {{
-                "field": "size",
-                "type": "quantitative"
-              }},
-              "strokeWidth": {{
-                "field": "significance",
-                "scale": {{
-                  "type": "log",
-                  "range": [1, 10],
-                  "domain": [0.001, 1],
-                  "reverse": true
-                }}
-              }},
+            "tooltip": [
+                {{"field": "size", "title": "{effect_size}"}},
+                {{"field": "significance", "title": "{effect_significance}"}},
+                {{"field": "signed_pi, "title": "signed pi value"}}
+            ],
+            "color": {{
+              "field": "signed_pi",
+              "scale": {{
+                "type": "linear",
+                "scheme": "blueorange",
+                "domainMid": 0
+              }}
+            }},
+            "x": {{
+              "value": 0
+            }},
+            "x2": {{
+              "field": "size",
+              "type": "quantitative"
+            }},
+            "strokeWidth": {{
+              "field": "significance",
+              "scale": {{
+                "type": "log",
+                "range": [1, 10],
+                "domain": [0.001, 1],
+                "reverse": true
+              }}
+            }}
           }},
           "config": {{
               "background": null,
