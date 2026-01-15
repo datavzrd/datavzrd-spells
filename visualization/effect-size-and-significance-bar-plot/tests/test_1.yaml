@@ -1,0 +1,18 @@
+name: Test
+
+datasets:
+    test:
+      path: data1.csv
+      separator: ","
+
+views:
+  test:
+    dataset: test
+    render-table:
+      columns:
+        effect size and significance:
+          spell:
+            url: ../spell.yaml
+            with:
+              effect_size: "effect size"
+              effect_significance: "effect significance"

@@ -1,0 +1,24 @@
+name: effect-size-and-significance-bar-plot
+type: "column"
+description: |
+  This spell creates a bar plot for (biological) effect sizes that are
+  associated with a significance p-value. The bar width to the left or right
+  from 0 represents the effect size, the bar height represents the significance
+  on a log scale. The diverging color scheme is centered around 0 and
+  represents a combination of effect size and significance with the signed pi
+  value as proposed by Xiao et al. 2014 in:
+  https://dx.doi.org/10.1093/bioinformatics/btr671
+example:
+  code: |
+    render-table:
+      columns:
+        effect size and significance:
+          spell:
+            url: <url>
+            with:
+              effect_size: "effect size"
+              effect_significance: "adjusted p-value"
+  test-data: tests/data1.csv
+authors:
+  - Felix Wiegand
+  - David Lähnemann
