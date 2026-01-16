@@ -15,18 +15,8 @@ custom-plot:
               "as": "signed_pi"
             }},
             {{
-              "extent": "signed_pi",
-              "param": "signed_pi_extent"
-            }},
-            {{
               "calculate": "0",
               "as": "effect_size_midpoint"
-            }}
-          ],
-          "params": [
-            {{
-              "name": "signed_pi_absolute_max",
-              "expr": "max(abs(signed_pi_extent[0]),signed_pi_extent[1])"
             }}
           ],
           "mark": "rule",
@@ -41,15 +31,7 @@ custom-plot:
               "scale": {{
                 "type": "diverging",
                 "scheme": "blueorange",
-                "domain": [
-                  {{
-                    "expr": "-signed_pi_absolute_max"
-                  }},
-                  0,
-                  {{
-                    "expr": "signed_pi_absolute_max"
-                  }}
-                ]
+                "domainMid": 0
               }}
             }},
             "x": {{
