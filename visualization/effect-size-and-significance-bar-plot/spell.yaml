@@ -11,7 +11,7 @@ custom-plot:
           "height": 10,
           "transform": [
             {{
-              "calculate": "-(log(datum.significance)/log(10))*datum.effect_size",
+              "calculate": "-(log(datum.significance)/log(10))*datum.size",
               "as": "signed_pi"
             }}
           ],
