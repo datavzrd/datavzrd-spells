@@ -17,4 +17,5 @@ views:
               effect_size: "effect size"
               effect_size_min: -2
               effect_size_max: 2
-              effect_significance: "effect significance"
+              effect_significance: "adjusted p-value"
+              signed_pi: "signed pi"

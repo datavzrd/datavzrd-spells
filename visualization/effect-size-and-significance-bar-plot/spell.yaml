@@ -2,7 +2,15 @@ __use_yte__: true
 
 custom-plot:
     data: |
-      ?f"""function(value, row) {{ return [{{"significance": row["{effect_significance}"], "size": row["{effect_size}"]}}] }}"""
+      ?f"""function(value, row) {{
+        return [
+          {{
+            "significance": row["{effect_significance}"],
+            "size": row["{effect_size}"],
+            "signed_pi": row["{signed_pi}"]
+          }}
+        ]
+      }}"""
     vega-controls: true
     spec: |
         ?f"""{{
@@ -10,10 +18,6 @@ custom-plot:
           "width": 50,
           "height": 10,
           "transform": [
-            {{
-              "calculate": "-(log(datum.significance)/log(10))*datum.size",
-              "as": "signed_pi"
-            }},
             {{
               "calculate": "0",
               "as": "effect_size_midpoint"
@@ -24,10 +28,11 @@ custom-plot:
             "tooltip": [
                 {{"field": "size", "title": "{effect_size}"}},
                 {{"field": "significance", "title": "{effect_significance}"}},
-                {{"field": "signed_pi", "title": "signed pi value"}}
+                {{"field": "signed_pi", "title": "{signed_pi}"}}
             ],
             "color": {{
               "field": "signed_pi",
+              "type": "quantitative",
               "scale": {{
                 "type": "diverging",
                 "scheme": "blueorange",

@@ -5,8 +5,9 @@ description: |
   associated with a significance p-value. The bar width to the left or right
   from 0 represents the effect size, the bar height represents the significance
   on a log scale. The diverging color scheme is centered around 0 and
-  represents a combination of effect size and significance with the signed pi
-  value as proposed by Xiao et al. 2014 in:
+  represents a combination of effect size and significance, represented by the
+  signed pi value in a separate column. The score should be computed as
+  proposed by Xiao et al. 2014 in:
   https://dx.doi.org/10.1093/bioinformatics/btr671
 example:
   code: |
@@ -20,6 +21,7 @@ example:
               effect_size_min: -2
               effect_size_max: 2
               effect_significance: "adjusted p-value"
+              signed_pi: "signed pi"
   test-data: tests/data1.csv
 authors:
   - Felix Wiegand
