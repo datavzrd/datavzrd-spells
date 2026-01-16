@@ -17,6 +17,8 @@ example:
             url: <url>
             with:
               effect_size: "effect size"
+              effect_size_min: -2
+              effect_size_max: 2
               effect_significance: "adjusted p-value"
   test-data: tests/data1.csv
 authors:
