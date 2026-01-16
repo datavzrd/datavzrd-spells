@@ -13,6 +13,10 @@ custom-plot:
             {{
               "calculate": "-(log(datum.significance)/log(10))*datum.size",
               "as": "signed_pi"
+            }},
+            {{
+              "calculate": "0",
+              "as": "effect_size_midpoint"
             }}
           ],
           "mark": "rule",
@@ -25,17 +29,22 @@ custom-plot:
             "color": {{
               "field": "signed_pi",
               "scale": {{
-                "type": "linear",
+                "type": "diverging",
                 "scheme": "blueorange",
                 "domainMid": 0
               }}
             }},
             "x": {{
-              "value": 0
+              "field": "effect_size_midpoint",
+              "type": "quantitative",
+              "scale": {{
+                "type": "linear",
+                "range": [-25, 25],
+                "domain": [{effect_size_min}, {effect_size_max}]
+              }}
             }},
             "x2": {{
-              "field": "size",
-              "type": "quantitative"
+              "field": "size"
             }},
             "strokeWidth": {{
               "field": "significance",
