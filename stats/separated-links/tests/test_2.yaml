@@ -1,0 +1,16 @@
+datasets:
+  test:
+    path: data_proteins.tsv
+    separator: "\t"
+
+views:
+  test:
+    dataset: test
+    render-table:
+      columns:
+        proteins:
+          spell:
+            url: ../spell.yaml
+            with:
+              separator: ";"
+              url_template: "https://flexikon.doccheck.com/de/${value}"

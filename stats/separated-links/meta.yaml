@@ -1,0 +1,18 @@
+name: separated-links
+type: "column"
+description: |
+  This spell separates a cell on a given separator (default: comma) and creates clickable links for each element. Each element can be formatted as a URL using a configurable URL template with `${value}` as a placeholder.
+  Perfect for lists of genes, proteins, or other entities that should link to external resources.
+example:
+  code: |
+    render-table:
+      columns:
+        genes:
+          spell:
+            url: <url>
+            with:
+              separator: ","
+              url_template: "https://www.genecards.org/cgi-bin/carddisp.pl?gene=${value}"
+  test-data: tests/data.tsv
+authors:
+  - Adrian Prinz

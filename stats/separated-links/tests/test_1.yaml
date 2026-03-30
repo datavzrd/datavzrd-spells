@@ -1,0 +1,16 @@
+datasets:
+  test:
+    path: data.tsv
+    separator: "\t"
+
+views:
+  test:
+    dataset: test
+    render-table:
+      columns:
+        genes:
+          spell:
+            url: ../spell.yaml
+            with:
+              separator: ","
+              url_template: "https://www.genecards.org/cgi-bin/carddisp.pl?gene=${value}"
