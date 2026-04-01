@@ -13,6 +13,6 @@ example:
             with:
               separator: ","
               url_template: "https://www.genecards.org/cgi-bin/carddisp.pl?gene=${value}"
-  test-data: tests/data.tsv
+  test-data: tests/data_genes.tsv
 authors:
   - Adrian Prinz

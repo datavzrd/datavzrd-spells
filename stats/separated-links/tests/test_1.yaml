@@ -1,6 +1,6 @@
 datasets:
   test:
-    path: data.tsv
+    path: data_genes.tsv
     separator: "\t"
 
 views:
@@ -12,5 +12,6 @@ views:
           spell:
             url: ../spell.yaml
             with:
-              separator: ","
+              # If the user specifies no separator, we use a comma as default
+              # separator: ","
               url_template: "https://www.genecards.org/cgi-bin/carddisp.pl?gene=${value}"
