@@ -1,0 +1,28 @@
+__use_yte__: true
+
+custom: |
+  ?f"""function(value) {{
+    if (!value) return "";
+
+    // If the user provides no separator, use a comma
+    let separator = "{(locals().get('separator') or '').strip() or ','}";
+    let urlTemplate = "{url_template}".trim();
+
+
+    // Split by separator, trim whitespace
+    const items = value
+      .split(separator)
+      .map((item) => item.trim())
+      .filter((item) => item);
+
+    // Create links for each item
+    const links = items.map((item) => {{
+      const encodedItem = encodeURIComponent(item);
+      const url = urlTemplate.replace(/\$\{{value\}}/g, encodedItem);
+      return `<a href='${{url}}' target='_blank'>${{item}}</a>`;
+    }});
+
+    // Join with separator+space, wrap in div
+    return `<div style="line-height:1.1 !important">${{links.join(separator + " ")}}</div>`;
+  }}
+  """
