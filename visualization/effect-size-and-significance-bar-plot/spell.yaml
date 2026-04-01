@@ -1,0 +1,69 @@
+__use_yte__: true
+
+custom-plot:
+    data: |
+      ?f"""function(value, row) {{
+        return [
+          {{
+            "significance": row["{effect_significance}"],
+            "size": row["{effect_size}"],
+            "signed_pi": row["{signed_pi}"]
+          }}
+        ]
+      }}"""
+    vega-controls: true
+    spec: |
+        ?f"""{{
+          "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+          "width": 50,
+          "height": 10,
+          "transform": [
+            {{
+              "calculate": "0",
+              "as": "effect_size_midpoint"
+            }}
+          ],
+          "mark": "rule",
+          "encoding": {{
+            "tooltip": [
+                {{"field": "size", "title": "{effect_size}"}},
+                {{"field": "significance", "title": "{effect_significance}"}},
+                {{"field": "signed_pi", "title": "{signed_pi}"}}
+            ],
+            "color": {{
+              "field": "signed_pi",
+              "type": "quantitative",
+              "scale": {{
+                "type": "diverging",
+                "scheme": "blueorange",
+                "domainMid": 0
+              }}
+            }},
+            "x": {{
+              "field": "effect_size_midpoint",
+              "type": "quantitative",
+              "scale": {{
+                "type": "linear",
+                "range": [-25, 25],
+                "domain": [{effect_size_min}, {effect_size_max}]
+              }}
+            }},
+            "x2": {{
+              "field": "size"
+            }},
+            "strokeWidth": {{
+              "field": "significance",
+              "scale": {{
+                "type": "log",
+                "range": [1, 10],
+                "domain": [0.001, 1],
+                "reverse": true
+              }}
+            }}
+          }},
+          "config": {{
+              "background": null,
+              "style": {{"cell": {{"stroke": "transparent"}}}}
+          }}
+        }}
+        """

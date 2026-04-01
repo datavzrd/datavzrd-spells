@@ -1,0 +1,21 @@
+name: Test
+
+datasets:
+    test:
+      path: data1.csv
+      separator: ","
+
+views:
+  test:
+    dataset: test
+    render-table:
+      columns:
+        effect size:
+          spell:
+            url: ../spell.yaml
+            with:
+              effect_size: "effect size"
+              effect_size_min: -2
+              effect_size_max: 2
+              effect_significance: "adjusted p-value"
+              signed_pi: "signed pi"
