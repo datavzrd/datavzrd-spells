@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.5.1...v1.6.0) (2026-04-01)
+
+
+### Features
+
+* Add separated-links spell ([#33](https://github.com/datavzrd/datavzrd-spells/issues/33)) ([ba4f42c](https://github.com/datavzrd/datavzrd-spells/commit/ba4f42c410dc0e3674473c7ec230fccabf744710))
+
 ## [1.5.1](https://github.com/datavzrd/datavzrd-spells/compare/v1.5.0...v1.5.1) (2025-11-13)
 
 
