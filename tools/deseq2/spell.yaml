@@ -1,0 +1,46 @@
+__use_yte__: true
+
+__definitions__:
+  - significance_threshold = globals().get("significance_threshold", 0.05)
+  - fold_change_color_limit = float(globals().get("fold_change_color_limit", 3))
+
+render-table:
+  columns:
+    index(0):
+      label: gene
+      link-to-url:
+        Ensembl:
+          url: "https://www.ensembl.org/id/{value}"
+    baseMean:
+      precision: 1
+      plot:
+        ticks:
+          scale: symlog
+    log2FoldChange:
+      precision: 2
+      plot:
+        heatmap:
+          scale: linear
+          domain: ?[-fold_change_color_limit, fold_change_color_limit]
+          domain-mid: 0
+          range: ["#2166ac", "#f7f7f7", "#b2182b"]
+    lfcSE:
+      optional: true
+      precision: 2
+      display-mode: detail
+    stat:
+      optional: true
+      precision: 2
+      display-mode: detail
+    pvalue:
+      optional: true
+      precision: 3
+    padj:
+      optional: true
+      spell:
+        url: v1.6.0/stats/p-value
+        with:
+          significance_threshold: ?significance_threshold
+    svalue:
+      optional: true
+      precision: 3
