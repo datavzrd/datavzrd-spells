@@ -1,13 +1,12 @@
 __use_yte__: true
 
 __definitions__:
-  - gene_column = globals().get("gene_column", "")
   - significance_threshold = globals().get("significance_threshold", 0.05)
   - fold_change_color_limit = float(globals().get("fold_change_color_limit", 3))
 
 render-table:
   columns:
-    ?gene_column:
+    index(0):
       label: gene
       link-to-url:
         Ensembl:
