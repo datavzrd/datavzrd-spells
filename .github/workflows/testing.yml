@@ -28,10 +28,22 @@ jobs:
         run: |
           pytest -v
       - name: Upload artifacts
+        id: upload
         uses: actions/upload-artifact@v4
         with:
           name: test outputs
           path: test_outputs/
+      - name: Prepare PR comment
+        if: github.event_name == 'pull_request'
+        run: |
+          mkdir pr
+          echo "The test reports of this PR can be downloaded [here](${{ steps.upload.outputs.artifact-url }})." > pr/${{ github.event.number }}.md
+      - name: Upload PR comment
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr
+          path: pr/
 
   deploy-examples:
     if: github.event_name == 'push'
