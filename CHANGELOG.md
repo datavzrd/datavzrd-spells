@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.7.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.6.0...v1.7.0) (2026-10-20)
+
+
+### Features
+
+* Add deseq2 spell ([#38](https://github.com/datavzrd/datavzrd-spells/issues/38)) ([82651f2](https://github.com/datavzrd/datavzrd-spells/commit/82651f27fd36fcc7829441a01d7841fb2b672d0b))
+* Add volcano-plot spell ([#40](https://github.com/datavzrd/datavzrd-spells/issues/40)) ([7eb067c](https://github.com/datavzrd/datavzrd-spells/commit/7eb067c8b40321713f926a84d414666b4c7350d7))
+* Host example reports of spells ([#36](https://github.com/datavzrd/datavzrd-spells/issues/36)) ([518d894](https://github.com/datavzrd/datavzrd-spells/commit/518d89405d79e24e332800d76b4d4441769fe5b9))
+
 ## [1.6.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.5.1...v1.6.0) (2026-04-01)
 
 
