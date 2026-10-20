@@ -4,9 +4,7 @@ __definitions__:
   - import json
   - import math
   - import re
-  - id_column = globals().get("id_column", "")
-  - fold_change_column = globals().get("fold_change_column", "log2FoldChange")
-  - p_value_column = globals().get("p_value_column", "padj")
+  - id_column = globals().get("id_column")
   - significance_threshold = float(globals().get("significance_threshold", 0.05))
   - fold_change_threshold = float(globals().get("fold_change_threshold", 0))
   - link = globals().get("link")
@@ -30,7 +28,6 @@ __definitions__:
             },
             "order": {"field": "significant"},
             "tooltip": [
-                {"field": "id", "title": id_column or "id"},
                 {"field": "fold_change", "title": fold_change_column, "format": ".2f"},
                 {"field": "p_value", "title": p_value_column, "format": ".2e"},
             ],
@@ -70,7 +67,6 @@ __definitions__:
                 "calculate": "-log(datum.p_value > 0 ? datum.p_value : (datum.min_p_value || 1e-299) / 10) / LN10",
                 "as": "neg_log_p_value",
             },
-            {"calculate": field(id_column), "as": "id"},
             {
                 "calculate": f"datum.p_value < {significance_threshold} && abs(datum.fold_change) > {fold_change_threshold}",
                 "as": "significant",
@@ -98,6 +94,9 @@ __definitions__:
             *thresholds,
         ],
     }
+    if id_column is not None:
+        volcano["transform"].append({"calculate": field(id_column), "as": "id"})
+        points["encoding"]["tooltip"].insert(0, {"field": "id", "title": id_column})
 
 render-plot:
   spec: ?json.dumps(volcano)
