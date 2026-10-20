@@ -1,0 +1,11 @@
+name: DESeq2 results
+
+datasets:
+  results:
+    path: airway_dex.csv
+
+views:
+  volcano-plot:
+    dataset: results
+    spell:
+      url: ../spell.yaml

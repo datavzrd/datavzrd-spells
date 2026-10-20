@@ -1,0 +1,103 @@
+__use_yte__: true
+
+__definitions__:
+  - import json
+  - import math
+  - import re
+  - id_column = globals().get("id_column", "")
+  - fold_change_column = globals().get("fold_change_column", "log2FoldChange")
+  - p_value_column = globals().get("p_value_column", "padj")
+  - significance_threshold = float(globals().get("significance_threshold", 0.05))
+  - fold_change_threshold = float(globals().get("fold_change_threshold", 0))
+  - link = globals().get("link")
+  - |
+    def field(column):
+        return f"datum[{json.dumps(column)}]"
+
+    points = {
+        "params": [{"name": "zoom", "select": "interval", "bind": "scales"}],
+        "mark": {"type": "point", "filled": True, "opacity": 0.7},
+        "encoding": {
+            "x": {"field": "fold_change", "type": "quantitative", "title": fold_change_column},
+            "y": {"field": "neg_log_p_value", "type": "quantitative", "title": f"-log10 {p_value_column}"},
+            "color": {
+                "field": "regulation",
+                "type": "nominal",
+                "scale": {
+                    "domain": ["up", "down", "not significant"],
+                    "range": ["#b2182b", "#2166ac", "#bbbbbb"],
+                },
+            },
+            "order": {"field": "significant"},
+            "tooltip": [
+                {"field": "id", "title": id_column or "id"},
+                {"field": "fold_change", "title": fold_change_column, "format": ".2f"},
+                {"field": "p_value", "title": p_value_column, "format": ".2e"},
+            ],
+        },
+    }
+    if link:
+        # vega-lite reads dots and brackets in field names as nested access
+        points["encoding"]["href"] = {"field": re.sub(r"([.\[\]])", r"\\\1", link)}
+
+    thresholds = [
+        {
+            "mark": {"type": "rule", "strokeDash": [4, 4], "color": "#888888"},
+            "encoding": {"y": {"datum": -math.log10(significance_threshold)}},
+        }
+    ]
+    if fold_change_threshold > 0:
+        thresholds += [
+            {
+                "mark": {"type": "rule", "strokeDash": [4, 4], "color": "#888888"},
+                "encoding": {"x": {"datum": x}},
+            }
+            for x in [-fold_change_threshold, fold_change_threshold]
+        ]
+
+    volcano = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "width": 600,
+        "height": 450,
+        "transform": [
+            {"calculate": f"toNumber({field(fold_change_column)})", "as": "fold_change"},
+            {"calculate": f"toNumber({field(p_value_column)})", "as": "p_value"},
+            {"filter": "isValid(datum.fold_change) && isValid(datum.p_value)"},
+            # p-values of zero are drawn a magnitude above the smallest non-zero one
+            {"calculate": "datum.p_value > 0 ? datum.p_value : null", "as": "nonzero_p_value"},
+            {"joinaggregate": [{"op": "min", "field": "nonzero_p_value", "as": "min_p_value"}]},
+            {
+                "calculate": "-log(datum.p_value > 0 ? datum.p_value : (datum.min_p_value || 1e-299) / 10) / LN10",
+                "as": "neg_log_p_value",
+            },
+            {"calculate": field(id_column), "as": "id"},
+            {
+                "calculate": f"datum.p_value < {significance_threshold} && abs(datum.fold_change) > {fold_change_threshold}",
+                "as": "significant",
+            },
+            {
+                "calculate": "datum.significant ? (datum.fold_change > 0 ? 'up' : 'down') : 'not significant'",
+                "as": "regulation",
+            },
+        ],
+        "layer": [
+            {
+                "transform": [
+                    {"calculate": "abs(datum.fold_change)", "as": "abs_fold_change"},
+                    {"aggregate": [{"op": "max", "field": "abs_fold_change", "as": "extent"}]},
+                    {"calculate": "-datum.extent", "as": "negative_extent"},
+                ],
+                "mark": {"type": "rule", "opacity": 0},
+                "encoding": {
+                    "x": {"field": "negative_extent", "type": "quantitative"},
+                    "x2": {"field": "extent"},
+                    "y": {"datum": 0},
+                },
+            },
+            points,
+            *thresholds,
+        ],
+    }
+
+render-plot:
+  spec: ?json.dumps(volcano)

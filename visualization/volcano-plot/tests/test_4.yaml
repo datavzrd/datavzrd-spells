@@ -1,0 +1,16 @@
+name: Proteomics
+
+datasets:
+  proteins:
+    path: zero_p_values.tsv
+
+views:
+  volcano-plot:
+    dataset: proteins
+    spell:
+      url: ../spell.yaml
+      with:
+        id_column: protein
+        fold_change_column: log2 ratio (H/L)
+        p_value_column: q-value
+        fold_change_threshold: 1
