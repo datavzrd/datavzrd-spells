@@ -1,0 +1,6 @@
+datasets:
+  test:
+    path: ?path
+
+views:
+  test: ?view

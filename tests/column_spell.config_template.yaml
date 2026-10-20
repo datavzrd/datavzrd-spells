@@ -1,8 +1,0 @@
-datasets:
-  test:
-    path: ?path
-
-views:
-  test:
-    dataset: test
-    render-table: ?example

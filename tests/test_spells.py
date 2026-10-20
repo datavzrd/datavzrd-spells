@@ -70,26 +70,26 @@ def test_example(spell):
             "render-table" in example_code
         ), f"Example code for column spell has to start with render-table in spell {spell}"
 
-        with open(
-            Path(__file__).parent / "column_spell.config_template.yaml", "r"
-        ) as f, tempfile.NamedTemporaryFile("w") as rendered_config:
-            process_yaml(
-                f,
-                outfile=rendered_config,
-                variables={
-                    "example": example_code["render-table"],
-                    "path": example["test-data"],
-                },
-            )
-            rendered_config.flush()
+    with open(
+        Path(__file__).parent / "example.config_template.yaml", "r"
+    ) as f, tempfile.NamedTemporaryFile("w") as rendered_config:
+        process_yaml(
+            f,
+            outfile=rendered_config,
+            variables={
+                "view": {"dataset": "test", **example_code},
+                "path": example["test-data"],
+            },
+        )
+        rendered_config.flush()
 
-            try:
-                sp.run(
-                    ["datavzrd", rendered_config.name, "--output", outdir.absolute()],
-                    check=True,
-                    stderr=sp.PIPE,
-                    cwd=spell,
-                )
-            except sp.CalledProcessError as e:
-                print(e.stderr.decode(), file=sys.stderr)
-                raise e
+        try:
+            sp.run(
+                ["datavzrd", rendered_config.name, "--output", outdir.absolute()],
+                check=True,
+                stderr=sp.PIPE,
+                cwd=spell,
+            )
+        except sp.CalledProcessError as e:
+            print(e.stderr.decode(), file=sys.stderr)
+            raise e
