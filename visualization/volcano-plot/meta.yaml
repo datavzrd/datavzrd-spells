@@ -10,7 +10,19 @@ description: |
   When plotting s-values from `lfcShrink()` with apeglm or ashr, a `significance_threshold` of 0.005 is common.
   If the plot stays empty, check that the given column names exist in the dataset.
   For DESeq2, plotting shrunken fold changes from `lfcShrink()` avoids that genes with low counts dominate the x-axis.
-  Points can link to the corresponding table row (e.g. of the deseq2 spell) by passing the name of a link defined for the dataset as `link`, see the example.
+  Points can link to the corresponding table row (e.g. of the deseq2 spell) via a link defined for the dataset, here pointing to the view `results` showing the table:
+
+  ```yaml
+  datasets:
+    results:
+      path: results.tsv
+      links:
+        gene details:
+          column: gene_id
+          table-row: results/gene_id
+  ```
+
+  Passing `link: gene details` to the spell then makes the points clickable.
 example:
   code: |
     spell:
@@ -21,18 +33,6 @@ example:
         p_value_column: padj
         significance_threshold: 0.05
         fold_change_threshold: 1
-        # to make points clickable, define a link for the dataset, e.g.
-        #
-        # datasets:
-        #   results:
-        #     path: deseq2_results.tsv
-        #     links:
-        #       gene details:
-        #         column: gene_id
-        #         table-row: results/gene_id
-        #
-        # and pass its name here
-        # link: gene details
   test-data: tests/airway_dex_shrunken.tsv
 authors:
   - Felix Wiegand
