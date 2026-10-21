@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.8.0...v1.9.0) (2026-10-21)
+
+
+### Features
+
+* Label top genes in the volcano-plot spell ([#46](https://github.com/datavzrd/datavzrd-spells/issues/46)) ([d7a8897](https://github.com/datavzrd/datavzrd-spells/commit/d7a88977b0bc99a371dd3db5100454466261305a))
+* Show gene symbols in the deseq2 spell ([#44](https://github.com/datavzrd/datavzrd-spells/issues/44)) ([9cf1b05](https://github.com/datavzrd/datavzrd-spells/commit/9cf1b053f01830a8d01c5e2d1852005429bbbdfe))
+
 ## [1.8.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.7.0...v1.8.0) (2026-10-21)
 
 
