@@ -1,0 +1,71 @@
+__use_yte__: true
+
+__definitions__:
+  - significance_threshold = globals().get("significance_threshold", 0.05)
+  - organism = globals().get("organism", "")
+  - organism_filter = f"+AND+{organism.replace(' ', '+')}%5BOrgn%5D" if organism else ""
+
+render-table:
+  columns:
+    "":
+      optional: true
+      display-mode: hidden
+    ID:
+      custom: |
+        function(value) {
+          let url;
+          if (value.startsWith("GO:")) {
+            url = `https://www.ebi.ac.uk/QuickGO/term/${value}`;
+          } else if (value.startsWith("R-")) {
+            url = `https://reactome.org/content/detail/${value}`;
+          } else if (/^([a-z]{2,4}|M)\d{5}$/.test(value)) {
+            url = `https://www.kegg.jp/entry/${value}`;
+          } else if (/^WP\d+$/.test(value)) {
+            url = `https://www.wikipathways.org/pathways/${value}.html`;
+          } else {
+            return value;
+          }
+          return `<a href="${url}" target="_blank">${value}</a>`;
+        }
+    GeneRatio:
+      display-mode: detail
+    BgRatio:
+      display-mode: detail
+    RichFactor:
+      optional: true
+      precision: 2
+      display-mode: detail
+    FoldEnrichment:
+      optional: true
+      precision: 2
+      plot:
+        bars:
+          scale: linear
+    zScore:
+      optional: true
+      precision: 2
+      display-mode: detail
+    pvalue:
+      precision: 3
+    p.adjust:
+      spell:
+        url: v1.7.0/stats/p-value
+        with:
+          significance_threshold: ?significance_threshold
+    qvalue:
+      optional: true
+      precision: 3
+      display-mode: detail
+    geneID:
+      display-mode: detail
+      plot:
+        pills:
+          separator: "/"
+          range: ["#e3e8f0"]
+      link-to-url:
+        NCBI Gene:
+          url: ?f"https://www.ncbi.nlm.nih.gov/gene/?term={{pill-value}}%5BSym%5D{organism_filter}"
+    Count:
+      plot:
+        bars:
+          scale: linear
