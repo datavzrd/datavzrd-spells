@@ -1,0 +1,13 @@
+name: Marker genes
+
+datasets:
+  markers:
+    path: pbmc_small_markers.csv
+
+views:
+  markers:
+    dataset: markers
+    spell:
+      url: ../spell.yaml
+      with:
+        organism: Homo sapiens

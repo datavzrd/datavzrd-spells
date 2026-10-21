@@ -1,0 +1,18 @@
+name: seurat-markers
+type: "view"
+description: |
+  This spell renders marker genes found with `FindAllMarkers()` or `FindMarkers()` of [Seurat](https://satijalab.org/seurat) (version 4 or later) as a table.
+  Average log2 fold changes are shown as a diverging heatmap that saturates at `fold_change_color_limit` (default 3), adjusted p-values are colored by `significance_threshold`, clusters are colored and genes link to NCBI Gene, restricted to `organism` if given (e.g. `Homo sapiens`).
+  An additional column shows the fraction of cells expressing the gene in the tested group (`pct.1`) next to the cells it is compared to (`pct.2`).
+  `FindMarkers()` only stores genes as row names, so add them as a column before writing, e.g. `markers$gene <- rownames(markers)`.
+example:
+  code: |
+    spell:
+      url: <url>
+      with:
+        significance_threshold: 0.05
+        fold_change_color_limit: 3
+        organism: Homo sapiens
+  test-data: tests/pbmc_small_markers.csv
+authors:
+  - Felix Wiegand
