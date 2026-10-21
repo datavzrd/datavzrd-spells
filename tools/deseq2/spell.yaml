@@ -3,6 +3,7 @@ __use_yte__: true
 __definitions__:
   - significance_threshold = globals().get("significance_threshold", 0.05)
   - fold_change_color_limit = float(globals().get("fold_change_color_limit", 3))
+  - symbol_column = globals().get("symbol_column")
 
 render-table:
   columns:
@@ -11,6 +12,9 @@ render-table:
       link-to-url:
         Ensembl:
           url: "https://www.ensembl.org/id/{value}"
+    ?if symbol_column:
+      ?symbol_column:
+        label: symbol
     baseMean:
       precision: 1
       plot:
