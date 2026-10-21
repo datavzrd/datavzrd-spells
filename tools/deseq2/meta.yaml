@@ -7,6 +7,7 @@ description: |
   DESeq2 itself does not write files, the spell expects the columns of `results()` or `lfcShrink()` as written by e.g. `write.csv()`, with the Ensembl gene ids in the first column, named or not.
   If the table also contains gene symbols, e.g. added with `mapIds()` of the `AnnotationDbi` package, their column can be given as `symbol_column`.
   `baseMean` and `log2FoldChange` are required, `lfcSE`, `stat`, `pvalue`, `padj` and `svalue` are shown if present, so shrunken fold changes from apeglm or ashr work as well.
+  A `signed_pi_value` column (`-log10(pvalue) * log2FoldChange`, see [Xiao et al. 2014](https://doi.org/10.1093/bioinformatics/btr671)) is shown as a diverging heatmap if present.
   Combine it with the volcano-plot spell in another view to get a clickable volcano plot linking to the rows of this table.
   Such links need a named gene column, e.g. by writing `data.frame(gene = rownames(res), res)`.
 example:
