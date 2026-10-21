@@ -9,3 +9,5 @@ views:
     dataset: results
     spell:
       url: ../spell.yaml
+      with:
+        symbol_column: symbol
