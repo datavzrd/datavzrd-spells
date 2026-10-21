@@ -48,3 +48,11 @@ render-table:
     svalue:
       optional: true
       precision: 3
+    signed_pi_value:
+      optional: true
+      precision: 2
+      plot:
+        heatmap:
+          scale: linear
+          domain-mid: 0
+          range: ["#2166ac", "#f7f7f7", "#b2182b"]
