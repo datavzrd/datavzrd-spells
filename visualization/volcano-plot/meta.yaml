@@ -6,6 +6,8 @@ description: |
   For [DESeq2](https://bioconductor.org/packages/DESeq2) these are e.g. `log2FoldChange` and `padj`, for edgeR `logFC` and `FDR` and for limma `logFC` and `adj.P.Val`.
   Rows below `significance_threshold` and beyond `fold_change_threshold` (default 0, drawn as dashed lines if set) are colored by the direction of regulation.
   The x-axis is centered at zero, the plot can be zoomed and panned and rows without a fold change or p-value are left out.
+  The `label_top` (default 10) rows with the highest π score (absolute fold change times negative log10 p-value) are labeled, as well as the comma separated `label_genes`.
+  Labels are taken from `label_column` (e.g. gene symbols), falling back to `id_column` for empty values.
   p-values of zero are drawn one order of magnitude above the smallest non-zero one, while the tooltip shows the actual value.
   When plotting s-values from `lfcShrink()` with apeglm or ashr, a `significance_threshold` of 0.005 is common.
   If the plot stays empty, check that the given column names exist in the dataset.
@@ -29,10 +31,13 @@ example:
       url: <url>
       with:
         id_column: gene_id
+        label_column: symbol
         fold_change_column: log2FoldChange
         p_value_column: padj
         significance_threshold: 0.05
         fold_change_threshold: 1
+        label_top: 10
+        label_genes: FKBP5,ZBTB16
   test-data: tests/airway_dex_shrunken.tsv
 authors:
   - Felix Wiegand

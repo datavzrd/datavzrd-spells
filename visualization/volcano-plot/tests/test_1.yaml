@@ -19,6 +19,8 @@ views:
       url: ../spell.yaml
       with:
         id_column: gene_id
+        label_column: symbol
+        label_genes: FKBP5,ZBTB16
         fold_change_column: log2FoldChange
         p_value_column: padj
         fold_change_threshold: 1

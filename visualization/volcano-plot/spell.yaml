@@ -8,6 +8,9 @@ __definitions__:
   - significance_threshold = float(globals().get("significance_threshold", 0.05))
   - fold_change_threshold = float(globals().get("fold_change_threshold", 0))
   - link = globals().get("link")
+  - label_column = globals().get("label_column")
+  - label_top = int(globals().get("label_top", 10))
+  - label_genes = [gene.strip() for gene in str(globals().get("label_genes", "")).split(",") if gene.strip()]
   - |
     def field(column):
         return f"datum[{json.dumps(column)}]"
@@ -97,6 +100,41 @@ __definitions__:
     if id_column is not None:
         volcano["transform"].append({"calculate": field(id_column), "as": "id"})
         points["encoding"]["tooltip"].insert(0, {"field": "id", "title": id_column})
+    if label_column is not None:
+        label = field(label_column)
+        fallback = "datum.id" if id_column is not None else "null"
+        volcano["transform"].append(
+            {"calculate": f"isValid({label}) && {label} != '' && {label} != 'NA' ? {label} : {fallback}", "as": "label"}
+        )
+        points["encoding"]["tooltip"].insert(0, {"field": "label", "title": label_column})
+    elif id_column is not None:
+        volcano["transform"].append({"calculate": "datum.id", "as": "label"})
+
+    if (label_top > 0 or label_genes) and (label_column or id_column):
+        # label the genes with the highest pi score (Xiao et al. 2014) and the explicitly given ones
+        volcano["transform"] += [
+            {"calculate": "abs(datum.fold_change) * datum.neg_log_p_value", "as": "pi"},
+            {"window": [{"op": "row_number", "as": "pi_rank"}], "sort": [{"field": "pi", "order": "descending"}]},
+            {
+                "calculate": f"datum.pi_rank <= {label_top} || indexof({json.dumps(label_genes)}, datum.label) >= 0",
+                "as": "labelled",
+            },
+        ]
+        highlighted = {
+            "transform": [{"filter": "datum.labelled"}],
+            "mark": {"type": "point", "filled": True, "size": 60, "stroke": "#222222", "strokeWidth": 1},
+            "encoding": {key: value for key, value in points["encoding"].items() if key != "order"},
+        }
+        labels = {
+            "transform": [{"filter": "datum.labelled"}],
+            "mark": {"type": "text", "align": "left", "dx": 7, "dy": -6, "fontSize": 11},
+            "encoding": {
+                "x": points["encoding"]["x"],
+                "y": points["encoding"]["y"],
+                "text": {"field": "label"},
+            },
+        }
+        volcano["layer"] += [highlighted, labels]
 
 render-plot:
   spec: ?json.dumps(volcano)
