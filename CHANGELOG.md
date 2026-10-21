@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.10.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.9.0...v1.10.0) (2026-10-21)
+
+
+### Features
+
+* Rank volcano-plot labels by a given column ([#48](https://github.com/datavzrd/datavzrd-spells/issues/48)) ([6c0615c](https://github.com/datavzrd/datavzrd-spells/commit/6c0615ce3c227c6a689922c690b302b109493d58))
+* Show the signed pi value in the deseq2 spell ([#47](https://github.com/datavzrd/datavzrd-spells/issues/47)) ([4600838](https://github.com/datavzrd/datavzrd-spells/commit/46008384c8337dffddfaf32650deda3f67ea5876))
+
 ## [1.9.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.8.0...v1.9.0) (2026-10-21)
 
 
