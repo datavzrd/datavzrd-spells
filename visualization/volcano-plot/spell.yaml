@@ -10,6 +10,7 @@ __definitions__:
   - link = globals().get("link")
   - label_column = globals().get("label_column")
   - label_top = int(globals().get("label_top", 10))
+  - rank_column = globals().get("rank_column")
   - label_genes = [gene.strip() for gene in str(globals().get("label_genes", "")).split(",") if gene.strip()]
   - |
     def field(column):
@@ -111,12 +112,13 @@ __definitions__:
         volcano["transform"].append({"calculate": "datum.id", "as": "label"})
 
     if (label_top > 0 or label_genes) and (label_column or id_column):
-        # label the genes with the highest pi score (Xiao et al. 2014) and the explicitly given ones
+        # label the genes with the highest pi score (Xiao et al. 2014) or rank column and the explicitly given ones
+        score = f"abs(toNumber({field(rank_column)}))" if rank_column else "abs(datum.fold_change) * datum.neg_log_p_value"
         volcano["transform"] += [
-            {"calculate": "abs(datum.fold_change) * datum.neg_log_p_value", "as": "pi"},
-            {"window": [{"op": "row_number", "as": "pi_rank"}], "sort": [{"field": "pi", "order": "descending"}]},
+            {"calculate": f"isValid({score}) ? {score} : 0", "as": "score"},
+            {"window": [{"op": "row_number", "as": "rank"}], "sort": [{"field": "score", "order": "descending"}]},
             {
-                "calculate": f"datum.pi_rank <= {label_top} || indexof({json.dumps(label_genes)}, datum.label) >= 0",
+                "calculate": f"datum.rank <= {label_top} || indexof({json.dumps(label_genes)}, datum.label) >= 0",
                 "as": "labelled",
             },
         ]
