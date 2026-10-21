@@ -1,0 +1,70 @@
+__use_yte__: true
+
+__definitions__:
+  - significance_threshold = globals().get("significance_threshold", 0.05)
+  - fold_change_color_limit = float(globals().get("fold_change_color_limit", 3))
+  - organism = globals().get("organism", "")
+  - organism_filter = f"+AND+{organism.replace(' ', '+')}%5BOrgn%5D" if organism else ""
+
+render-table:
+  columns:
+    "":
+      optional: true
+      display-mode: hidden
+    gene:
+      link-to-url:
+        NCBI Gene:
+          url: ?f"https://www.ncbi.nlm.nih.gov/gene/?term={{value}}%5BSym%5D{organism_filter}"
+    cluster:
+      optional: true
+      plot:
+        heatmap:
+          type: nominal
+    avg_log2FC:
+      precision: 2
+      plot:
+        heatmap:
+          scale: linear
+          domain: ?[-fold_change_color_limit, fold_change_color_limit]
+          domain-mid: 0
+          range: ["#2166ac", "#f7f7f7", "#b2182b"]
+    pct.1:
+      precision: 3
+      display-mode: detail
+    pct.2:
+      precision: 3
+      display-mode: detail
+    p_val:
+      precision: 3
+    p_val_adj:
+      spell:
+        url: v1.7.0/stats/p-value
+        with:
+          significance_threshold: ?significance_threshold
+  add-columns:
+    detected in:
+      value: |
+        function(row) {
+          return row["pct.1"];
+        }
+      custom-plot:
+        data: |
+          function(value, row) {
+            return [
+              {"cells": "pct.1", "fraction": parseFloat(row["pct.1"])},
+              {"cells": "pct.2", "fraction": parseFloat(row["pct.2"])}
+            ];
+          }
+        spec: |
+          {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 80,
+            "height": 24,
+            "mark": {"type": "bar", "tooltip": true},
+            "encoding": {
+              "x": {"field": "fraction", "type": "quantitative", "scale": {"domain": [0, 1]}, "axis": null},
+              "y": {"field": "cells", "type": "nominal", "axis": {"title": null, "ticks": false, "domain": false}},
+              "color": {"field": "cells", "type": "nominal", "scale": {"domain": ["pct.1", "pct.2"], "range": ["#b2182b", "#bbbbbb"]}, "legend": null}
+            },
+            "config": {"view": {"stroke": null}}
+          }
