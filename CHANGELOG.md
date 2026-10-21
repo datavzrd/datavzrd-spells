@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.7.0...v1.8.0) (2026-10-21)
+
+
+### Features
+
+* Add clusterprofiler spell ([#41](https://github.com/datavzrd/datavzrd-spells/issues/41)) ([66fa5d8](https://github.com/datavzrd/datavzrd-spells/commit/66fa5d821d14727018d44a1600012e343826c3e3))
+* Add seurat-markers spell ([#42](https://github.com/datavzrd/datavzrd-spells/issues/42)) ([be39381](https://github.com/datavzrd/datavzrd-spells/commit/be39381cb3cbd24c4e47be360a9db833224b598a))
+
 ## [1.7.0](https://github.com/datavzrd/datavzrd-spells/compare/v1.6.0...v1.7.0) (2026-10-20)
 
 
