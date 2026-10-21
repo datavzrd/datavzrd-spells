@@ -7,6 +7,7 @@ description: |
   Rows below `significance_threshold` and beyond `fold_change_threshold` (default 0, drawn as dashed lines if set) are colored by the direction of regulation.
   The x-axis is centered at zero, the plot can be zoomed and panned and rows without a fold change or p-value are left out.
   The `label_top` (default 10) rows with the highest π score (absolute fold change times negative log10 p-value) are labeled, as well as the comma separated `label_genes`.
+  Instead of π, the rows can be ranked by the absolute value of a given `rank_column`, e.g. a precomputed signed π value.
   Labels are taken from `label_column` (e.g. gene symbols), falling back to `id_column` for empty values.
   p-values of zero are drawn one order of magnitude above the smallest non-zero one, while the tooltip shows the actual value.
   When plotting s-values from `lfcShrink()` with apeglm or ashr, a `significance_threshold` of 0.005 is common.
