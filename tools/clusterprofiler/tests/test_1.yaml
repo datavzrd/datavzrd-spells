@@ -1,0 +1,13 @@
+name: GO enrichment
+
+datasets:
+  enrichment:
+    path: airway_go_enrichment.tsv
+
+views:
+  enrichment:
+    dataset: enrichment
+    spell:
+      url: ../spell.yaml
+      with:
+        organism: Homo sapiens
